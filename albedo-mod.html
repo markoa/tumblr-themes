@@ -1,0 +1,395 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="/rss">
+    <style type="text/css">
+      body {
+        background-color: #FFF;
+        font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        color: #333;
+        margin: 0;
+      }
+
+      strong, em, b, i, bold {
+        font-family: "Lucida Sans", "Lucida Grande", Arial, Helvetica, sans-serif;
+      }
+
+      a:link, a:visited {
+        color: #666;
+        text-decoration: underline;
+      }
+
+      a:hover, a:link:hover, a:visited:hover {
+        color: #000;
+        text-decoration: none;
+      }
+
+      a:link img, a:visited img {
+        border: 0px;
+        text-decoration: none;
+      }
+
+      #wrap {
+        margin: 0 auto;
+        text-align: left;
+        width: 700px;
+        padding-top: 20px;
+      }
+
+      div#container {
+        margin-bottom: 3em;
+      }
+
+      #title {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-size: 12px;
+        color: #999;
+      }
+
+      #title h1 {
+        font-size: 25px;
+        font-family: Calibri, Arial, Helvetica, sans-serif;
+        margin-bottom: 0px;
+        color: #000;
+      }
+
+      #title h1 a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      #post {
+        border-bottom: 1px solid #eee;
+        margin-bottom: 1.5em;
+      }
+
+      h2.entry-title {
+        margin-left: 80px; 
+        font-family: Arial;
+        font-size: 20px;
+      }
+
+      div.entry-type {
+        color: #666;
+        float: left;
+        font-size: 12px;
+        margin-right: 10px;
+        width: 70px;
+      }
+
+      div.entry-content {
+        margin-bottom: 1.5em;
+        margin-left: 80px;
+      }
+
+      .link-title {
+        font-size: 13px;
+        font-weight: bold;
+      }
+
+      .cite {
+        display: block;
+        text-align: right;
+        color: #555;
+      }
+
+      div.quotation blockquote {
+        font-family: Georgia, Times New Roman, serif;
+        font-size: 14px;
+        line-height: 22px;
+      }
+
+      .chat ul {
+        padding: 0px;
+        margin:0px;
+      }
+
+      .chat ul li {
+        list-style: none;
+        font-size: 11px;
+        color: #333;
+        padding: 5px;
+        margin: 0px;
+      }
+
+      .label {
+        font-weight: bold;
+      }
+
+      li.odd {
+        background: #fff;
+      }
+
+      li.even {
+        background: #eee;
+      }
+
+      #footer {
+        font-size: 11px;
+        margin-bottom: 0px;
+        padding-top: 20px;
+      }
+
+      #pagenav {
+        margin: 60px 0 0 0;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 1.5em;
+      }
+
+      #pagenav .inside {
+        text-align: center;
+        position: relative;
+      }
+
+      #back, #forward {
+        font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        color: #666;
+        text-transform: uppercase;
+        padding: 7px;
+        text-decoration: none;
+        display: block;
+        position: absolute;
+        top: -7px;
+      }
+
+      #back:hover, #forward:hover {
+        color: #000;
+      }
+
+      #back {
+        float:left;
+        text-align: left;
+        left: 0px;
+      }
+
+      #forward {
+        float: right;
+        text-align: right;
+        right: 0px;
+      }
+
+      #pages {
+        color: #333;
+        font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      #navigation {
+        margin-top: 10px;
+        text-align: left;
+        float: right;
+      }
+
+      #navigation li {
+        display: inline;
+        list-style: none;
+        margin-left: 15px;
+      }
+
+      #navigation li a {
+        color: #888;
+        font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 11px;
+      }
+
+      .small {
+        font-size: 10px;
+        color: #999;
+      }
+
+      #navigation li a:hover {
+        color: #000;
+      }
+
+      .tags {
+        color: #999;
+        font-size: 10px;
+        padding: 6px 3px 0 0;
+      }
+
+      .tags a {
+        padding: 1px 3px;
+        margin: 0 0 3px 3px;
+      }
+
+      ol.notes {
+        list-style-type: none;
+      }
+
+      #searchBlock {
+        float: right;
+      }
+
+      #plkt-widget {
+        width: 160px;
+
+      }
+
+      .plkt-events {
+        height: 120px;
+      }
+
+      .linkDescription {
+        margin-top: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="title">
+        <ul id="navigation">
+          <li><a href="/">Home</a></li>
+          <li><a href="/tagged/myphotos">#myphotos</a></li>
+          <li><a href="/archive">Archives</a></li>
+          <li><a href="{RSS}">RSS</a></li>
+          <li><a href="http://flickr.com/photos/manastasov">Flickr</a></li>
+          <li><a href="http://www.marko.anastasov.name">Writing</a></li>
+        </ul>
+        <h1><a href="/">{Title}</a></h1>
+        <br />{Description}
+      </div>
+
+      <div id="container">
+
+        {block:Posts}
+
+        {block:Text}
+        <div id="post">
+          {block:Title}<h2 class="entry-title">{Title}</h2>{/block:Title}
+          <div class="entry-type">
+            <a href="{Permalink}"><img src="http://i43.tinypic.com/nf3zgy.gif" alt="Text"></a>
+          </div>
+          <div class="entry-content"><p>{Body}</p>
+            <br /><br />{block:RebloggedFrom}<span class="small">Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+            {block:HasTags}<div class="tags">Tags: {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+            <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm}  {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
+            {block:PostNotes} {PostNotes} {/block:PostNotes}
+          </div>
+        </div>
+        {/block:Text}
+
+        {block:Photo}
+        <div id="post">
+          <div class="entry-type"><a href="{Permalink}"><img src="http://i39.tinypic.com/30vkoax.gif" alt="Photograph"></a></div>
+          <div class="entry-content"><p>{LinkOpenTag}<img src="{PhotoURL-500}" class="photo" alt="{PhotoAlt}" /></a></p>{LinkCloseTag}<p>
+          {block:Caption}
+          {Caption}
+          {/block:Caption}
+          <br /><br />{block:RebloggedFrom}<span class="small">Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          {block:HasTags}<div class="tags">Tags: {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+          <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
+          {block:PostNotes} {PostNotes} {/block:PostNotes}
+        </div>
+      </div>
+      {/block:Photo}
+
+      {block:Link}
+      <div id="post">
+        <div class="entry-type"><a href="{Permalink}"><img src="http://i42.tinypic.com/288wbc8.gif" alt="Link"></a></div>
+        <div class="entry-content"><p><a href="{URL}" class="link-title" {Target}>{Name}</a><p class="linkDescription">{block:Description} {Description} {/block:Description}</p>
+          <br /><br />{block:RebloggedFrom}<span class="small">Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          {block:HasTags}<div class="tags">Tags: {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+          <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
+          {block:PostNotes} {PostNotes} {/block:PostNotes}
+        </div>
+      </div>
+      {/block:Link}
+
+      {block:Video}
+      <div id="post">
+        <div class="entry-type"><a href="{Permalink}"><img src="http://i39.tinypic.com/5uefe8.gif" alt="Video"></a></div>
+        <div class="entry-content"><p>{Video-500}<p>{block:Caption} {Caption} {/block:Caption}
+          <br /><br />{block:RebloggedFrom}<span class="small">Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          {block:HasTags}<div class="tags">Tags: {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+          <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
+          {block:PostNotes} {PostNotes} {/block:PostNotes}
+        </div>
+      </div>
+      {/block:Video}
+
+      {block:Quote}
+      <div id="post" class="quotation">
+        <div class="entry-type"><a href="{Permalink}"><img src="http://i39.tinypic.com/jrbaq8.gif" alt="Quote"></a></div>
+        <div class="entry-content"><blockquote>&ldquo;{Quote}&rdquo;</blockquote><p class="cite">{block:Source}&mdash; {Source}{/block:Source}</p>
+          <br /><br />{block:RebloggedFrom}<span class="small">Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          {block:HasTags}<div class="tags">Tags: {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+          <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
+          {block:PostNotes} {PostNotes} {/block:PostNotes}
+        </div>
+      </div>
+      {/block:Quote}
+
+      {block:Audio}
+      <div id="post">
+        <div class="entry-type"><a href="{Permalink}"><img src="http://i39.tinypic.com/2akfqlv.gif" alt="Audio"></a></div>
+        <div class="entry-content"><p>{AudioPlayerWhite}<p>{block:ExternalAudio}<a href="{ExternalAudioURL}">Download</a>{/block:ExternalAudio}</p>{block:Caption}{Caption}{/block:Caption}
+          <br />
+          <span class="small">Played {FormattedPlayCount} time(s).</span>
+          <br /><br />{block:RebloggedFrom}<span class="small">Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          {block:HasTags}<div class="tags">Tags: {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+          <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
+          {block:PostNotes} {PostNotes} {/block:PostNotes}
+        </div>
+      </div>
+      {/block:Audio}
+
+      {block:Chat}
+      <div id="post" class="chat">
+        {block:Title}<h2 class="entry-title">{Title}</h2>{/block:Title}
+        <div class="entry-type"><a href="{Permalink}"><img src="http://i43.tinypic.com/xpn714.gif" alt="Chat"></a></div>
+        <div class="entry-content"><ul>
+            {block:Lines}
+            <li class="{Alt}">{block:Label}<span class="label">{Label}</span>{/block:Label}&nbsp;{Line}</li>
+            {/block:Lines}
+          </ul>
+          <br /><br />{block:RebloggedFrom}<span class="small">Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          {block:HasTags}<div class="tags">Tags: {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+          <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
+          {block:PostNotes} {PostNotes} {/block:PostNotes}
+        </div>
+      </div>
+      {/block:Chat}
+
+      {/block:Posts}
+
+      <div id="pagenav">
+        <div class="inside">
+          {block:IndexPage} 
+          {block:NextPage}<a id="back" href="{NextPage}">&larr;&nbsp;Next</a>{/block:NextPage}
+          <span id="pages">Page {CurrentPage} of {TotalPages}</span>
+          {block:PreviousPage}<a id="forward" href="{PreviousPage}">Previous&nbsp;&rarr;</a>{/block:PreviousPage}
+          {/block:IndexPage}
+
+          {block:PermalinkPagination} 
+          {block:NextPost}<a id="forward" href="{NextPost}">Forward&nbsp;&rarr;</a> {/block:NextPost}
+          <span id="pages">~</span>
+          {block:PreviousPost}<a id="back" href="{PreviousPost}">&larr;&nbsp;Back</a>{/block:PreviousPost}
+          {/block:PermalinkPagination}
+        </div>
+      </div>
+
+      <div id="footer">
+        <div id="searchBlock">
+          <form action="/search" method="get">
+            <input type="search" name="q" value="{SearchQuery}"/>
+            <input type="submit" value="&#x21A9;"/>
+          </form>
+        </div>
+        Modified <a href="http://albedotheme.tumblr.com">Albedo</a> theme. Machine provided by <a href="http://www.tumblr.com/">Tumblr</a>. Dreams of electric sheep.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
