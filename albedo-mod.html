@@ -254,12 +254,12 @@
     <div id="wrap">
       <div id="title">
         <ul id="navigation">
-          <li><a href="/">Home</a></li>
+          <li><a href="/">Početna</a></li>
           <li><a href="/tagged/myphotos">#myphotos</a></li>
-          <li><a href="/archive">Archives</a></li>
+          <li><a href="/archive">Arhiva</a></li>
+          <li><a href="/random">Slučajnost</a></li>
           <li><a href="{RSS}">RSS</a></li>
           <li><a href="http://flickr.com/photos/manastasov">Flickr</a></li>
-          <li><a href="http://www.marko.anastasov.name">Writing</a></li>
         </ul>
         <h1><a href="/">{Title}</a></h1>
         <br />{Description}
@@ -371,15 +371,15 @@
       <div id="pagenav">
         <div class="inside">
           {block:IndexPage} 
-          {block:NextPage}<a id="back" href="{NextPage}">&larr;&nbsp;Older</a>{/block:NextPage}
-          <span id="pages">Page {CurrentPage} of {TotalPages}</span>
-          {block:PreviousPage}<a id="forward" href="{PreviousPage}">Newer&nbsp;&rarr;</a>{/block:PreviousPage}
+          {block:NextPage}<a id="back" href="{NextPage}">&larr;&nbsp;Starije</a>{/block:NextPage}
+          <span id="pages">Strana {CurrentPage} od {TotalPages}</span>
+          {block:PreviousPage}<a id="forward" href="{PreviousPage}">Novije&nbsp;&rarr;</a>{/block:PreviousPage}
           {/block:IndexPage}
 
           {block:PermalinkPagination} 
-          {block:NextPost}<a id="forward" href="{NextPost}">Newer&nbsp;&rarr;</a> {/block:NextPost}
+          {block:NextPost}<a id="forward" href="{NextPost}">Novije&nbsp;&rarr;</a> {/block:NextPost}
           <span id="pages">~</span>
-          {block:PreviousPost}<a id="back" href="{PreviousPost}">&larr;&nbsp;Older</a>{/block:PreviousPost}
+          {block:PreviousPost}<a id="back" href="{PreviousPost}">&larr;&nbsp;Starije</a>{/block:PreviousPost}
           {/block:PermalinkPagination}
         </div>
       </div>
@@ -391,7 +391,7 @@
             <input type="submit" value="&#x21A9;"/>
           </form>
         </div>
-        <a href="http://github.com/markoa/tumblr-themes">Modified</a> <a href="http://albedotheme.tumblr.com">Albedo</a> theme for a machine provided by <a href="http://www.tumblr.com/">Tumblr</a>.
+        Ovo je <a href="http://www.tumblr.com/">Tumblr</a> blog sa <a href="http://github.com/markoa/tumblr-themes">modifikovanom</a> <a href="http://albedotheme.tumblr.com">Albedo</a> temom. Podrži svoje lokalne bendove.
       </div>
     </div>
   </div>
