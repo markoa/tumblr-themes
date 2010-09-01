@@ -34,6 +34,10 @@
         text-decoration: none;
       }
 
+      li {
+        margin: 0.7em 0;
+      }
+
       #wrap {
         margin: 0 auto;
         text-align: left;
@@ -106,7 +110,7 @@
 
       div.quotation blockquote {
         font-family: Georgia, Times New Roman, serif;
-        font-size: 14px;
+        font-size: 18px;
         line-height: 22px;
       }
 
@@ -248,6 +252,17 @@
       .linkDescription {
         margin-top: 2em;
       }
+
+      .text blockquote, .link blockquote, .photo blockquote, .audio blockquote, .video blockquote {
+        font-style: italic;
+        border-left: 5px solid #f0f0f0;
+        margin-left: 1em;
+      }
+
+      .text blockquote p, .link blockquote p, .photo blockquote p, .audio blockquote p, .video blockquote p {
+        margin-left: 10px;
+        color: gray;
+      }
     </style>
   </head>
   <body>
@@ -255,11 +270,11 @@
       <div id="title">
         <ul id="navigation">
           <li><a href="/">Početna</a></li>
-          <li><a href="/tagged/myphotos">#myphotos</a></li>
           <li><a href="/archive">Arhiva</a></li>
           <li><a href="/random">Slučajnost</a></li>
           <li><a href="{RSS}">RSS</a></li>
-          <li><a href="http://flickr.com/photos/manastasov">Flickr</a></li>
+          <li><a href="http://flickr.com/photos/manastasov" rel="me">Flickr</a></li>
+          <li><a href="http://twitter.com/markoa" rel="me">@markoa</a></li>
         </ul>
         <h1><a href="/">{Title}</a></h1>
         <br />{Description}
@@ -270,14 +285,14 @@
         {block:Posts}
 
         {block:Text}
-        <div id="post">
+        <div id="post" class="text">
           {block:Title}<h2 class="entry-title">{Title}</h2>{/block:Title}
           <div class="entry-type">
             <a href="{Permalink}"><img src="http://i43.tinypic.com/nf3zgy.gif" alt="Text"></a>
           </div>
           <div class="entry-content"><p>{Body}</p>
-            <br /><br />{block:RebloggedFrom}<span class="small">Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
-            {block:HasTags}<div class="tags">Tags: {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+            <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+            {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
             <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm}  {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
             {block:PostNotes} {PostNotes} {/block:PostNotes}
           </div>
@@ -285,14 +300,14 @@
         {/block:Text}
 
         {block:Photo}
-        <div id="post">
+        <div id="post" class="photo">
           <div class="entry-type"><a href="{Permalink}"><img src="http://i39.tinypic.com/30vkoax.gif" alt="Photograph"></a></div>
           <div class="entry-content"><p>{LinkOpenTag}<img src="{PhotoURL-500}" class="photo" alt="{PhotoAlt}" /></a></p>{LinkCloseTag}<p>
           {block:Caption}
           {Caption}
           {/block:Caption}
-          <br /><br />{block:RebloggedFrom}<span class="small">Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
-          {block:HasTags}<div class="tags">Tags: {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+          <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
           <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
           {block:PostNotes} {PostNotes} {/block:PostNotes}
         </div>
@@ -300,11 +315,11 @@
       {/block:Photo}
 
       {block:Link}
-      <div id="post">
+      <div id="post" class="link">
         <div class="entry-type"><a href="{Permalink}"><img src="http://i42.tinypic.com/288wbc8.gif" alt="Link"></a></div>
         <div class="entry-content"><p><a href="{URL}" class="link-title" {Target}>{Name}</a><p class="linkDescription">{block:Description} {Description} {/block:Description}</p>
-          <br /><br />{block:RebloggedFrom}<span class="small">Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
-          {block:HasTags}<div class="tags">Tags: {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+          <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
           <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
           {block:PostNotes} {PostNotes} {/block:PostNotes}
         </div>
@@ -312,11 +327,11 @@
       {/block:Link}
 
       {block:Video}
-      <div id="post">
+      <div id="post" class="video">
         <div class="entry-type"><a href="{Permalink}"><img src="http://i39.tinypic.com/5uefe8.gif" alt="Video"></a></div>
         <div class="entry-content"><p>{Video-500}<p>{block:Caption} {Caption} {/block:Caption}
-          <br /><br />{block:RebloggedFrom}<span class="small">Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
-          {block:HasTags}<div class="tags">Tags: {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+          <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
           <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
           {block:PostNotes} {PostNotes} {/block:PostNotes}
         </div>
@@ -327,8 +342,8 @@
       <div id="post" class="quotation">
         <div class="entry-type"><a href="{Permalink}"><img src="http://i39.tinypic.com/jrbaq8.gif" alt="Quote"></a></div>
         <div class="entry-content"><blockquote>&ldquo;{Quote}&rdquo;</blockquote><p class="cite">{block:Source}&mdash; {Source}{/block:Source}</p>
-          <br /><br />{block:RebloggedFrom}<span class="small">Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
-          {block:HasTags}<div class="tags">Tags: {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+          <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
           <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
           {block:PostNotes} {PostNotes} {/block:PostNotes}
         </div>
@@ -336,13 +351,13 @@
       {/block:Quote}
 
       {block:Audio}
-      <div id="post">
+      <div id="post" class="audio">
         <div class="entry-type"><a href="{Permalink}"><img src="http://i39.tinypic.com/2akfqlv.gif" alt="Audio"></a></div>
         <div class="entry-content"><p>{AudioPlayerWhite}<p>{block:ExternalAudio}<a href="{ExternalAudioURL}">Download</a>{/block:ExternalAudio}</p>{block:Caption}{Caption}{/block:Caption}
           <br />
           <span class="small">Played {FormattedPlayCount} time(s).</span>
-          <br /><br />{block:RebloggedFrom}<span class="small">Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
-          {block:HasTags}<div class="tags">Tags: {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+          <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
           <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
           {block:PostNotes} {PostNotes} {/block:PostNotes}
         </div>
@@ -358,8 +373,8 @@
             <li class="{Alt}">{block:Label}<span class="label">{Label}</span>{/block:Label}&nbsp;{Line}</li>
             {/block:Lines}
           </ul>
-          <br /><br />{block:RebloggedFrom}<span class="small">Reblogged from <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
-          {block:HasTags}<div class="tags">Tags: {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+          <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
           <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
           {block:PostNotes} {PostNotes} {/block:PostNotes}
         </div>
