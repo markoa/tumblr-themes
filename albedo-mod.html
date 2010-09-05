@@ -265,6 +265,7 @@
       }
     </style>
   </head>
+
   <body>
     <div id="wrap">
       <div id="title">
@@ -286,14 +287,35 @@
 
         {block:Text}
         <div id="post" class="text">
+
           {block:Title}<h2 class="entry-title">{Title}</h2>{/block:Title}
+
           <div class="entry-type">
             <a href="{Permalink}"><img src="http://i43.tinypic.com/nf3zgy.gif" alt="Text"></a>
           </div>
-          <div class="entry-content"><p>{Body}</p>
+
+          {block:ContentSource}
+            Izvor:
+            <a href="{SourceURL}">
+              {block:SourceLogo}
+                <img src="{BlackLogoURL}" width="{LogoWidth}"
+              height="{LogoHeight}" alt="{SourceTitle}" />
+              {/block:SourceLogo}
+              {block:NoSourceLogo}
+                {SourceLink}
+              {/block:NoSourceLogo}
+            </a>
+          {/block:ContentSource}
+
+          <div class="entry-content">
+            <p>{Body}</p>
+            
             <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+
             {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+
             <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm}  {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
+
             {block:PostNotes} {PostNotes} {/block:PostNotes}
           </div>
         </div>
@@ -301,14 +323,35 @@
 
         {block:Photo}
         <div id="post" class="photo">
-          <div class="entry-type"><a href="{Permalink}"><img src="http://i39.tinypic.com/30vkoax.gif" alt="Photograph"></a></div>
-          <div class="entry-content"><p>{LinkOpenTag}<img src="{PhotoURL-500}" class="photo" alt="{PhotoAlt}" /></a></p>{LinkCloseTag}<p>
-          {block:Caption}
-          {Caption}
-          {/block:Caption}
+
+          <div class="entry-type">
+            <a href="{Permalink}"><img src="http://i39.tinypic.com/30vkoax.gif" alt="Photograph"></a>
+          </div>
+
+          <div class="entry-content">
+            <p>{LinkOpenTag}<img src="{PhotoURL-500}" class="photo" alt="{PhotoAlt}" /></a></p>{LinkCloseTag}
+
+          {block:Caption} {Caption} {/block:Caption}
+
+          {block:ContentSource}
+            Izvor fotografije:
+            <a href="{SourceURL}">
+              {block:SourceLogo}
+                <img src="{BlackLogoURL}" width="{LogoWidth}"
+              height="{LogoHeight}" alt="{SourceTitle}" />
+              {/block:SourceLogo}
+              {block:NoSourceLogo}
+                {SourceLink}
+              {/block:NoSourceLogo}
+            </a>
+          {/block:ContentSource}
+
           <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+
           {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+
           <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
+
           {block:PostNotes} {PostNotes} {/block:PostNotes}
         </div>
       </div>
@@ -316,11 +359,35 @@
 
       {block:Link}
       <div id="post" class="link">
-        <div class="entry-type"><a href="{Permalink}"><img src="http://i42.tinypic.com/288wbc8.gif" alt="Link"></a></div>
-        <div class="entry-content"><p><a href="{URL}" class="link-title" {Target}>{Name}</a><p class="linkDescription">{block:Description} {Description} {/block:Description}</p>
+
+        <div class="entry-type">
+          <a href="{Permalink}"><img src="http://i42.tinypic.com/288wbc8.gif" alt="Link"></a>
+        </div>
+
+        <div class="entry-content">
+          <p><a href="{URL}" class="link-title" {Target}>{Name}</a></p>
+          
+          <p class="linkDescription">{block:Description} {Description} {/block:Description}</p>
+
+          {block:ContentSource}
+            Izvor:
+            <a href="{SourceURL}">
+              {block:SourceLogo}
+                <img src="{BlackLogoURL}" width="{LogoWidth}"
+              height="{LogoHeight}" alt="{SourceTitle}" />
+              {/block:SourceLogo}
+              {block:NoSourceLogo}
+                {SourceLink}
+              {/block:NoSourceLogo}
+            </a>
+          {/block:ContentSource}
+
           <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+
           {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+
           <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
+
           {block:PostNotes} {PostNotes} {/block:PostNotes}
         </div>
       </div>
@@ -328,11 +395,35 @@
 
       {block:Video}
       <div id="post" class="video">
-        <div class="entry-type"><a href="{Permalink}"><img src="http://i39.tinypic.com/5uefe8.gif" alt="Video"></a></div>
-        <div class="entry-content"><p>{Video-500}<p>{block:Caption} {Caption} {/block:Caption}
+
+        <div class="entry-type">
+          <a href="{Permalink}"><img src="http://i39.tinypic.com/5uefe8.gif" alt="Video"></a>
+        </div>
+
+        <div class="entry-content">
+          <p>{Video-500}</p>
+          
+          {block:Caption} {Caption} {/block:Caption}
+
+          {block:ContentSource}
+            Izvor:
+            <a href="{SourceURL}">
+              {block:SourceLogo}
+                <img src="{BlackLogoURL}" width="{LogoWidth}"
+              height="{LogoHeight}" alt="{SourceTitle}" />
+              {/block:SourceLogo}
+              {block:NoSourceLogo}
+                {SourceLink}
+              {/block:NoSourceLogo}
+            </a>
+          {/block:ContentSource}
+
           <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+
           {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+
           <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
+
           {block:PostNotes} {PostNotes} {/block:PostNotes}
         </div>
       </div>
@@ -340,11 +431,36 @@
 
       {block:Quote}
       <div id="post" class="quotation">
-        <div class="entry-type"><a href="{Permalink}"><img src="http://i39.tinypic.com/jrbaq8.gif" alt="Quote"></a></div>
-        <div class="entry-content"><blockquote>&ldquo;{Quote}&rdquo;</blockquote><p class="cite">{block:Source}&mdash; {Source}{/block:Source}</p>
+
+        <div class="entry-type">
+          <a href="{Permalink}"><img src="http://i39.tinypic.com/jrbaq8.gif" alt="Quote"></a>
+        </div>
+
+        <div class="entry-content">
+          
+          <blockquote>&ldquo;{Quote}&rdquo;</blockquote>
+          
+          <p class="cite">{block:Source}&mdash; {Source}{/block:Source}</p>
+
+          {block:ContentSource}
+            Izvor:
+            <a href="{SourceURL}">
+              {block:SourceLogo}
+                <img src="{BlackLogoURL}" width="{LogoWidth}"
+              height="{LogoHeight}" alt="{SourceTitle}" />
+              {/block:SourceLogo}
+              {block:NoSourceLogo}
+                {SourceLink}
+              {/block:NoSourceLogo}
+            </a>
+          {/block:ContentSource}
+
           <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+
           {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+
           <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
+
           {block:PostNotes} {PostNotes} {/block:PostNotes}
         </div>
       </div>
@@ -352,13 +468,34 @@
 
       {block:Audio}
       <div id="post" class="audio">
+
         <div class="entry-type"><a href="{Permalink}"><img src="http://i39.tinypic.com/2akfqlv.gif" alt="Audio"></a></div>
+
         <div class="entry-content"><p>{AudioPlayerWhite}<p>{block:ExternalAudio}<a href="{ExternalAudioURL}">Download</a>{/block:ExternalAudio}</p>{block:Caption}{Caption}{/block:Caption}
+
           <br />
+
           <span class="small">Played {FormattedPlayCount} time(s).</span>
+
+          {block:ContentSource}
+            Izvor:
+            <a href="{SourceURL}">
+              {block:SourceLogo}
+                <img src="{BlackLogoURL}" width="{LogoWidth}"
+              height="{LogoHeight}" alt="{SourceTitle}" />
+              {/block:SourceLogo}
+              {block:NoSourceLogo}
+                {SourceLink}
+              {/block:NoSourceLogo}
+            </a>
+          {/block:ContentSource}
+
           <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+
           {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+
           <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
+
           {block:PostNotes} {PostNotes} {/block:PostNotes}
         </div>
       </div>
@@ -366,16 +503,37 @@
 
       {block:Chat}
       <div id="post" class="chat">
+
         {block:Title}<h2 class="entry-title">{Title}</h2>{/block:Title}
+
         <div class="entry-type"><a href="{Permalink}"><img src="http://i43.tinypic.com/xpn714.gif" alt="Chat"></a></div>
-        <div class="entry-content"><ul>
+
+        <div class="entry-content">
+          <ul>
             {block:Lines}
             <li class="{Alt}">{block:Label}<span class="label">{Label}</span>{/block:Label}&nbsp;{Line}</li>
             {/block:Lines}
           </ul>
+
+          {block:ContentSource}
+            Izvor:
+            <a href="{SourceURL}">
+              {block:SourceLogo}
+                <img src="{BlackLogoURL}" width="{LogoWidth}"
+              height="{LogoHeight}" alt="{SourceTitle}" />
+              {/block:SourceLogo}
+              {block:NoSourceLogo}
+                {SourceLink}
+              {/block:NoSourceLogo}
+            </a>
+          {/block:ContentSource}
+
           <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+
           {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
+
           <p align="right" class="small">{Month} {DayOfMonthWithZero}, {Year}, {12Hour}:{Minutes}{AmPm} {block:NoteCount} + {NoteCountWithLabel} {/block:NoteCount}</p>
+
           {block:PostNotes} {PostNotes} {/block:PostNotes}
         </div>
       </div>
