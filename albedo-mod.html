@@ -221,7 +221,7 @@
         color: #000;
       }
 
-      .tags {
+      .tags, .source {
         color: #999;
         font-size: 10px;
         padding: 6px 3px 0 0;
@@ -294,18 +294,19 @@
             <a href="{Permalink}"><img src="http://i43.tinypic.com/nf3zgy.gif" alt="Text"></a>
           </div>
 
-          {block:ContentSource}
-            Izvor:
-            <a href="{SourceURL}">
-              {block:SourceLogo}
-                <img src="{BlackLogoURL}" width="{LogoWidth}"
-              height="{LogoHeight}" alt="{SourceTitle}" />
-              {/block:SourceLogo}
-              {block:NoSourceLogo}
-                {SourceLink}
-              {/block:NoSourceLogo}
-            </a>
-          {/block:ContentSource}
+          <div class="source">
+            {block:ContentSource}
+              Izvor:
+              <a href="{SourceURL}">
+                {block:SourceLogo}
+                  <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                {/block:SourceLogo}
+                {block:NoSourceLogo}
+                  {SourceLink}
+                {/block:NoSourceLogo}
+              </a>
+            {/block:ContentSource}
+          </div>
 
           <div class="entry-content">
             <p>{Body}</p>
@@ -333,18 +334,19 @@
 
           {block:Caption} {Caption} {/block:Caption}
 
-          {block:ContentSource}
-            Izvor fotografije:
-            <a href="{SourceURL}">
-              {block:SourceLogo}
-                <img src="{BlackLogoURL}" width="{LogoWidth}"
-              height="{LogoHeight}" alt="{SourceTitle}" />
-              {/block:SourceLogo}
-              {block:NoSourceLogo}
-                {SourceLink}
-              {/block:NoSourceLogo}
-            </a>
-          {/block:ContentSource}
+          <div class="source">
+            {block:ContentSource}
+              Izvor fotografije:
+              <a href="{SourceURL}">
+                {block:SourceLogo}
+                  <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                {/block:SourceLogo}
+                {block:NoSourceLogo}
+                  {SourceLink}
+                {/block:NoSourceLogo}
+              </a>
+            {/block:ContentSource}
+          </div>
 
           <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
 
@@ -369,18 +371,19 @@
           
           <p class="linkDescription">{block:Description} {Description} {/block:Description}</p>
 
-          {block:ContentSource}
-            Izvor:
-            <a href="{SourceURL}">
-              {block:SourceLogo}
-                <img src="{BlackLogoURL}" width="{LogoWidth}"
-              height="{LogoHeight}" alt="{SourceTitle}" />
-              {/block:SourceLogo}
-              {block:NoSourceLogo}
-                {SourceLink}
-              {/block:NoSourceLogo}
-            </a>
-          {/block:ContentSource}
+          <div class="source">
+            {block:ContentSource}
+              Izvor:
+              <a href="{SourceURL}">
+                {block:SourceLogo}
+                  <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                {/block:SourceLogo}
+                {block:NoSourceLogo}
+                  {SourceLink}
+                {/block:NoSourceLogo}
+              </a>
+            {/block:ContentSource}
+          </div>
 
           <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
 
@@ -405,18 +408,20 @@
           
           {block:Caption} {Caption} {/block:Caption}
 
-          {block:ContentSource}
-            Izvor:
-            <a href="{SourceURL}">
-              {block:SourceLogo}
-                <img src="{BlackLogoURL}" width="{LogoWidth}"
-              height="{LogoHeight}" alt="{SourceTitle}" />
-              {/block:SourceLogo}
-              {block:NoSourceLogo}
-                {SourceLink}
-              {/block:NoSourceLogo}
-            </a>
-          {/block:ContentSource}
+          <div class="source">
+            {block:ContentSource}
+              Izvor:
+              <a href="{SourceURL}">
+                {block:SourceLogo}
+                  <img src="{BlackLogoURL}" width="{LogoWidth}"
+                height="{LogoHeight}" alt="{SourceTitle}" />
+                {/block:SourceLogo}
+                {block:NoSourceLogo}
+                  {SourceLink}
+                {/block:NoSourceLogo}
+              </a>
+            {/block:ContentSource}
+          </div>
 
           <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
 
@@ -442,18 +447,20 @@
           
           <p class="cite">{block:Source}&mdash; {Source}{/block:Source}</p>
 
-          {block:ContentSource}
-            Izvor:
-            <a href="{SourceURL}">
-              {block:SourceLogo}
-                <img src="{BlackLogoURL}" width="{LogoWidth}"
-              height="{LogoHeight}" alt="{SourceTitle}" />
-              {/block:SourceLogo}
-              {block:NoSourceLogo}
-                {SourceLink}
-              {/block:NoSourceLogo}
-            </a>
-          {/block:ContentSource}
+          <div class="source">
+            {block:ContentSource}
+              Izvor:
+              <a href="{SourceURL}">
+                {block:SourceLogo}
+                  <img src="{BlackLogoURL}" width="{LogoWidth}"
+                height="{LogoHeight}" alt="{SourceTitle}" />
+                {/block:SourceLogo}
+                {block:NoSourceLogo}
+                  {SourceLink}
+                {/block:NoSourceLogo}
+              </a>
+            {/block:ContentSource}
+          </div>
 
           <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
 
@@ -477,18 +484,19 @@
 
           <span class="small">Played {FormattedPlayCount} time(s).</span>
 
-          {block:ContentSource}
-            Izvor:
-            <a href="{SourceURL}">
-              {block:SourceLogo}
-                <img src="{BlackLogoURL}" width="{LogoWidth}"
-              height="{LogoHeight}" alt="{SourceTitle}" />
-              {/block:SourceLogo}
-              {block:NoSourceLogo}
-                {SourceLink}
-              {/block:NoSourceLogo}
-            </a>
-          {/block:ContentSource}
+          <div class="source">
+            {block:ContentSource}
+              Izvor:
+              <a href="{SourceURL}">
+                {block:SourceLogo}
+                  <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                {/block:SourceLogo}
+                {block:NoSourceLogo}
+                  {SourceLink}
+                {/block:NoSourceLogo}
+              </a>
+            {/block:ContentSource}
+          </div>
 
           <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
 
@@ -515,18 +523,19 @@
             {/block:Lines}
           </ul>
 
-          {block:ContentSource}
-            Izvor:
-            <a href="{SourceURL}">
-              {block:SourceLogo}
-                <img src="{BlackLogoURL}" width="{LogoWidth}"
-              height="{LogoHeight}" alt="{SourceTitle}" />
-              {/block:SourceLogo}
-              {block:NoSourceLogo}
-                {SourceLink}
-              {/block:NoSourceLogo}
-            </a>
-          {/block:ContentSource}
+          <div class="source">
+            {block:ContentSource}
+              Izvor:
+              <a href="{SourceURL}">
+                {block:SourceLogo}
+                  <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+                {/block:SourceLogo}
+                {block:NoSourceLogo}
+                  {SourceLink}
+                {/block:NoSourceLogo}
+              </a>
+            {/block:ContentSource}
+          </div>
 
           <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
 
