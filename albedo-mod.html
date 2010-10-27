@@ -6,6 +6,11 @@
     <title>{Title}</title>
     <link rel="shortcut icon" href="{Favicon}">
     <link rel="alternate" type="application/rss+xml" href="/rss">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://dl.dropbox.com/u/830772/cdn/tackazvezda/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="http://dl.dropbox.com/u/830772/cdn/tackazvezda/app.js"></script> 
+
     <style type="text/css">
       body {
         background-color: #FFF;
@@ -69,12 +74,12 @@
         text-decoration: none;
       }
 
-      #post {
+      .post {
         border-bottom: 1px solid #eee;
         margin-bottom: 1.5em;
       }
 
-      #post p {
+      .post p {
         line-height: 18px;
       }
 
@@ -228,8 +233,7 @@
       }
 
       .tags a {
-        padding: 1px 3px;
-        margin: 0 0 3px 3px;
+        padding: 1px 2px;
       }
 
       ol.notes {
@@ -275,7 +279,6 @@
           <li><a href="/random">Slučajnost</a></li>
           <li><a href="{RSS}">RSS</a></li>
           <li><a href="http://flickr.com/photos/manastasov" rel="me">Flickr</a></li>
-          <li><a href="http://twitter.com/markoa" rel="me">@markoa</a></li>
         </ul>
         <h1><a href="/">{Title}</a></h1>
         <br />{Description}
@@ -286,7 +289,7 @@
         {block:Posts}
 
         {block:Text}
-        <div id="post" class="text">
+        <div id="post-{PostID}" class="post text">
 
           {block:Title}<h2 class="entry-title">{Title}</h2>{/block:Title}
 
@@ -311,7 +314,7 @@
           <div class="entry-content">
             <p>{Body}</p>
             
-            <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+            <br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
 
             {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
 
@@ -323,7 +326,7 @@
         {/block:Text}
 
         {block:Photo}
-        <div id="post" class="photo">
+        <div id="post-{PostID}" class="post photo">
 
           <div class="entry-type">
             <a href="{Permalink}"><img src="http://i39.tinypic.com/30vkoax.gif" alt="Photograph"></a>
@@ -348,7 +351,7 @@
             {/block:ContentSource}
           </div>
 
-          <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          <br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
 
           {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
 
@@ -360,7 +363,7 @@
       {/block:Photo}
 
       {block:Link}
-      <div id="post" class="link">
+      <div id="post-{PostID}" class="post link">
 
         <div class="entry-type">
           <a href="{Permalink}"><img src="http://i42.tinypic.com/288wbc8.gif" alt="Link"></a>
@@ -385,7 +388,7 @@
             {/block:ContentSource}
           </div>
 
-          <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          <br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
 
           {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
 
@@ -397,7 +400,7 @@
       {/block:Link}
 
       {block:Video}
-      <div id="post" class="video">
+      <div id="post-{PostID}" class="post video">
 
         <div class="entry-type">
           <a href="{Permalink}"><img src="http://i39.tinypic.com/5uefe8.gif" alt="Video"></a>
@@ -423,7 +426,7 @@
             {/block:ContentSource}
           </div>
 
-          <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          <br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
 
           {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
 
@@ -435,7 +438,7 @@
       {/block:Video}
 
       {block:Quote}
-      <div id="post" class="quotation">
+      <div id="post-{PostID}" class="post quotation">
 
         <div class="entry-type">
           <a href="{Permalink}"><img src="http://i39.tinypic.com/jrbaq8.gif" alt="Quote"></a>
@@ -462,7 +465,7 @@
             {/block:ContentSource}
           </div>
 
-          <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          <br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
 
           {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
 
@@ -474,15 +477,40 @@
       {/block:Quote}
 
       {block:Audio}
-      <div id="post" class="audio">
+      <div id="post-{PostID}" class="post audio">
 
         <div class="entry-type"><a href="{Permalink}"><img src="http://i39.tinypic.com/2akfqlv.gif" alt="Audio"></a></div>
 
-        <div class="entry-content"><p>{AudioPlayerWhite}<p>{block:ExternalAudio}<a href="{ExternalAudioURL}">Download</a>{/block:ExternalAudio}</p>{block:Caption}{Caption}{/block:Caption}
+        <div class="entry-content">
+          {block:AlbumArt}
+            <img src="{AlbumArtURL}" alt="">
+          {/block:AlbumArt}
+
+          <p>{AudioPlayerWhite}</p>
+          
+          <p>
+            {block:ExternalAudio}
+              <a href="{ExternalAudioURL}">Download</a>
+            {/block:ExternalAudio}
+          </p>
+
+          <p>
+            {block:Artist}
+              <strong>{Artist}</strong>
+            {/block:Artist}
+            &mdash;
+            {block:TrackName}
+              {TrackName}
+            {/block:TrackName}
+          </p>
+
+          <p>Album: {block:Album}<em>{Album}</em>{/block:Album} </p>
+          
+          {block:Caption}{Caption}{/block:Caption}
 
           <br />
 
-          <span class="small">Played {FormattedPlayCount} time(s).</span>
+          <span class="small">Pušteno {FormattedPlayCount} puta.</span>
 
           <div class="source">
             {block:ContentSource}
@@ -498,7 +526,7 @@
             {/block:ContentSource}
           </div>
 
-          <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          <br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
 
           {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
 
@@ -510,7 +538,7 @@
       {/block:Audio}
 
       {block:Chat}
-      <div id="post" class="chat">
+      <div id="post-{PostID}" class="post chat">
 
         {block:Title}<h2 class="entry-title">{Title}</h2>{/block:Title}
 
@@ -537,7 +565,7 @@
             {/block:ContentSource}
           </div>
 
-          <br /><br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
+          <br />{block:RebloggedFrom}<span class="small">Reblogovano sa <a href="{ReblogParentURL}">{ReblogParentTitle}</a>.</span>{/block:RebloggedFrom}
 
           {block:HasTags}<div class="tags">Zavedeno pod {block:Tags}<a href="{TagURL}" class="tag">{Tag}</a>{/block:Tags}</div>{/block:HasTags}
 
@@ -553,15 +581,15 @@
       <div id="pagenav">
         <div class="inside">
           {block:IndexPage} 
-          {block:NextPage}<a id="back" href="{NextPage}">&larr;&nbsp;Starije</a>{/block:NextPage}
+          {block:PreviousPage}<a id="back" href="{PreviousPage}">&laquo;&nbsp;Novije</a>{/block:PreviousPage}
           <span id="pages">Strana {CurrentPage} od {TotalPages}</span>
-          {block:PreviousPage}<a id="forward" href="{PreviousPage}">Novije&nbsp;&rarr;</a>{/block:PreviousPage}
+          {block:NextPage}<a id="forward" href="{NextPage}">Starije&nbsp;&raquo;</a>{/block:NextPage}
           {/block:IndexPage}
 
           {block:PermalinkPagination} 
-          {block:NextPost}<a id="forward" href="{NextPost}">Novije&nbsp;&rarr;</a> {/block:NextPost}
+          {block:PreviousPost}<a id="forward" href="{PreviousPost}">Starije&nbsp;&raquo;</a> {/block:PreviousPost}
           <span id="pages">~</span>
-          {block:PreviousPost}<a id="back" href="{PreviousPost}">&larr;&nbsp;Starije</a>{/block:PreviousPost}
+          {block:NextPost}<a id="back" href="{NextPost}">&laquo;&nbsp;Novije</a>{/block:NextPost}
           {/block:PermalinkPagination}
         </div>
       </div>
@@ -569,11 +597,11 @@
       <div id="footer">
         <div id="searchBlock">
           <form action="/search" method="get">
-            <input type="search" name="q" value="{SearchQuery}"/>
+            <input type="search" name="q" value="{SearchQuery}" placeholder="Traži..."/>
             <input type="submit" value="&#x21A9;"/>
           </form>
         </div>
-        Ovo je <a href="http://www.tumblr.com/">Tumblr</a> blog sa <a href="http://github.com/markoa/tumblr-themes">modifikovanom</a> <a href="http://albedotheme.tumblr.com">Albedo</a> temom. Podrži svoje lokalne bendove.
+        Ovo je <a href="http://www.tumblr.com/">Tumblr</a> blog sa <a href="http://github.com/markoa/tumblr-themes">izmenjenom</a> <a href="http://albedotheme.tumblr.com">Albedo</a> temom koji vodi <a href="http://twitter.com/markoa" rel="me">Marko Anastasov</a>.
       </div>
     </div>
   </div>
