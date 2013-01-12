@@ -98,3 +98,12 @@ $(document).bind("keydown", "h", goToPrevPage);
 $(document).bind("keydown", "l", goToNextPage);
 $(document).bind("keydown", "j", goToNextPost);
 $(document).bind("keydown", "k", goToPrevPost);
+
+$(document).ready(function() {
+  $(".share").hide();
+  $(".meta").mouseenter(function() {
+    $(this).find(".share").fadeIn();
+  }).mouseleave(function() {
+    $(this).find(".share").fadeOut();
+  });
+});
